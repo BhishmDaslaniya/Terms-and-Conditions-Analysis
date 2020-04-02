@@ -1,0 +1,62 @@
+{
+    "56ddde6b9a695914005b9628": [
+        {
+            "text": "Sundar Pichai",
+            "probability": 0.9960614454032284,
+            "start_logit": 4.917978286743164,
+            "end_logit": 5.870405197143555
+        },
+        {
+            "text": "Sundar Pichai was appointed CEO of Google, replacing Larry Page",
+            "probability": 0.003934393439026358,
+            "start_logit": 4.917978286743164,
+            "end_logit": 0.33635297417640686
+        },
+        {
+            "text": "Larry Page",
+            "probability": 4.1611577452454934e-06,
+            "start_logit": -1.9337403774261475,
+            "end_logit": 0.33635297417640686
+        }
+    ],
+    "56ddde6b9a695914005b9629": [
+        {
+            "text": "Larry Page and Sergey Brin",
+            "probability": 0.9997538369199536,
+            "start_logit": 9.040240287780762,
+            "end_logit": 9.814297676086426
+        },
+        {
+            "text": "Larry Page",
+            "probability": 0.0001834444792482431,
+            "start_logit": 9.040240287780762,
+            "end_logit": 1.2109453678131104
+        },
+        {
+            "text": "Sergey Brin",
+            "probability": 6.271860079801193e-05,
+            "start_logit": -0.6363660097122192,
+            "end_logit": 9.814297676086426
+        }
+    ],
+    "56ddde6b9a695914005b962a": [
+        {
+            "text": "August 19, 2004",
+            "probability": 0.9976998476200383,
+            "start_logit": 7.030599594116211,
+            "end_logit": 8.367961883544922
+        },
+        {
+            "text": "on August 19, 2004",
+            "probability": 0.0016049374674477572,
+            "start_logit": 0.5982319116592407,
+            "end_logit": 8.367961883544922
+        },
+        {
+            "text": "An initial public offering (IPO) took place on August 19, 2004",
+            "probability": 0.000695214912513827,
+            "start_logit": -0.23838713765144348,
+            "end_logit": 8.367961883544922
+        }
+    ]
+}

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            button {
+                height: 30px;
+                width: 30px;
+                outline: none;
+            }
+
+            html {
+                width: 500px;
+                height: 500px;
+            }
+        </style>
+
+        <!-- <script
+            src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"
+        ></script> -->
+        <!-- <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"
+        ></script> -->
+        <script src="lib/js/jquery.js"></script>
+        <link rel="stylesheet" href="lib/css/bootstrap.min.css" />
+        <script src="lib/js/bootstrap.min.js"></script>
+
+        <script src="popup.js"></script>
+        <script src="data.js"></script>
+        <!-- <script src="dom.js"></script> -->
+    </head>
+    <body style="height: 500px; width: 500px; ">
+        <!-- <button  id="checkPage"></button> -->
+        <div class="header" style="width: 100%;">
+            <div
+                class="row"
+                style="padding-left: 20px; padding-top: 20px; padding-right: 20px;"
+            >
+                <div class="col-10">
+                    <h2 id="title" style=""></h2>
+                </div>
+                <div class="col-1" style="padding-right: 50px;">
+                    <h6 style="margin-top: 10px; margin-bottom: auto;">
+                        <a href="javascript:void(0)" id="tabbutton">QA</a>
+                    </h6>
+                </div>
+            </div>
+            <hr style="width: 100%;" />
+        </div>
+
+        <div class="body">
+            <div
+                id="termsview"
+                class="termsview"
+                style="height: 100%; display: flex; flex-direction: row; padding-right: 2px;"
+            >
+                <div class="left" style="width: 100px; height: 100%;"></div>
+                <div
+                    class="right"
+                    style=" height: 100%; flex-grow: 1; overflow: auto"
+                >
+                    <div class="list">
+                        <div id="accordion"></div>
+                    </div>
+                </div>
+            </div>
+            <div
+                id="qaview"
+                class="qaview"
+                style="height: 100%; display: flex; flex-direction: row; padding-right: 2px;"
+            >
+                <div class="left" style="width: 10px; height: 100%;"></div>
+                <div
+                    class="right"
+                    style=" height: 100%; flex-grow: 1; overflow: auto"
+                >
+                    <textarea
+                        id="text"
+                        style="width: 100%;"
+                        rows="6"
+                    ></textarea>
+                    <div class="row" style=" display: flex; width: 100%;">
+                        <div style="width: 15px;"></div>
+                            <input
+                                id="q"
+                                value=""
+                                style="flex-grow: 1;"
+                                placeholder="Enter any question?"
+                            />
+                            <button id="ask" class="btn btn-primary" style="width: 100px ; margin-left: 5px" >Ask</button>
+                      </div>
+
+                      <div class="row" style="display: flex; width: 100%; padding-left: 15px">
+
+                        <p id="ans">Loading...</p>                        
+
+                      </div>
+
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

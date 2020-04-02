@@ -1,0 +1,1426 @@
+/*--------------
+All Contents
+--------------*/
+
+/*-----------------
+1. Reset.css
+2. Helper Classes
+3. Hamburger and Menu Styling
+4. Homepage sections styling
+5. About Page Styling
+6. Portfolio Page
+7. Projecr Single Page Styling
+8. Contact Page Stylins
+9. All Media Queries
+------------------*/
+
+/*----- 1. Reset.css -----*/
+
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* --- Common Styles ---*/
+
+h1 {
+  font-family: Roboto;
+  font-size: 16px;
+}
+
+p {
+  font-family: Roboto;
+  font-size: 14px;
+}
+
+/*----- Helper Classes -----*/
+
+html * {
+  text-rendering: optimizeLegibility !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: Poppins;
+  color: #ffffff;
+}
+
+*,
+*:after,
+*:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+/*
+::-webkit-scrollbar {
+	display: none;
+}*/
+
+::-moz-selection {
+  color: #1106cc;
+  background: #ffffff;
+}
+
+::selection {
+  color: #fff;
+  background: #0000ff;
+}
+
+.search-box {
+  display: flex;
+  width: 450px;
+  border: none;
+  position: relative;
+  height: 60px;
+  background: #5e43ff;
+  border-radius: 15px;
+  box-shadow: 0 3px 5px #beb4ff;
+  color: white;
+  font-weight: 600;
+  cursor: text;
+  align-self: center;
+}
+.search-box input {
+  position: absolute;
+  z-index: 0;
+  width: 450px;
+  height: 60px;
+  border-radius: 15px;
+  border: none;
+  color: white;
+  font-weight: 600;
+  background: #5e43ff;
+  padding-left: 60px;
+}
+.search-box input:focus {
+  outline: none;
+}
+.search-box input:focus + .search {
+  transform: perspective(400px) rotateY(89deg);
+  padding: 3px 0;
+  opacity: 0;
+}
+.search-box i.search {
+  height: 20px;
+  width: 20px;
+  border: 5px solid #fff;
+  border-radius: 50%;
+  position: relative;
+  z-index: 1;
+  transform: rotatez(-45deg);
+  top: 13px;
+  left: 5%;
+  transition: 0.2s all;
+  transform-style: preserve-3d;
+  perspective: 400px;
+}
+.search-box i.search::after {
+  content: "";
+  display: block;
+  width: 5px;
+  height: 15px;
+  background: #fff;
+  position: absolute;
+  left: calc(50% - 2px);
+  border-radius: 10px;
+  top: 101%;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+
+.prof-card {
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+.prof-card .prof-img img {
+  width: 100%;
+  height: auto;
+}
+.prof-card .prof-content::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 40%;
+  border: 3px solid #222;
+  border-right: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  transform: scale(1, 1);
+  transition: all 0.5s linear;
+}
+.prof-card .prof-content::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 50%;
+  height: 40%;
+  border: 3px solid #222;
+  border-left: 3px solid transparent;
+  border-top: 3px solid transparent;
+  transition: all 0.5s linear;
+}
+.prof-card:hover .prof-content:before {
+  top: 20px;
+  left: 20px;
+}
+.prof-card:hover .prof-content:after {
+  bottom: 20px;
+  right: 20px;
+}
+.prof-card .prof-content::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 50%;
+  height: 40%;
+  border: 3px solid #222;
+  border-left: 3px solid transparent;
+  border-top: 3px solid transparent;
+  transform: scale(1, 1);
+  transition: all 0.5s linear;
+}
+.prof-card .prof-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 50% 4%;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.prof-card .prof-content .title {
+  font-size: 24px;
+  color: #111;
+  opacity: 0;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  transform: translateY(-100px);
+  transition: all 900ms cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.2s;
+}
+.prof-card:hover .title {
+  opacity: 1;
+  transform: translateY(0);
+}
+.prof-card:hover .title::after {
+  content: "";
+  display: block;
+  width: 50%;
+  margin: 10px auto;
+  border-bottom: 2px solid #222;
+}
+.prof-card .prof-content .title > span {
+  display: block;
+  margin: 5px 0;
+  font-size: 14px;
+  text-transform: capitalize;
+}
+.prof-card .prof-content .social-link {
+  margin: 20px 0;
+  padding: 0;
+  opacity: 0;
+  transform: translateY(100px);
+  transition: all 600ms cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.2s;
+}
+.prof-card:hover .social-link {
+  opacity: 1;
+  transform: translateY(0);
+}
+.prof-card .prof-content .social-link li {
+  display: inline-block;
+  list-style: none;
+  margin: 0 4px;
+}
+.prof-card .prof-content .social-link li a {
+  color: #333;
+  width: 30px;
+  height: 25px;
+  line-height: 24px;
+  text-align: center;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+.shadow {
+  -webkit-filter: drop-shadow(-2px 2px 8px rgba(50, 50, 0, 0.5));
+  filter: drop-shadow(-2px 2px 8px rgba(50, 50, 0, 0.5));
+  font-family: Lato, sans-serif;
+}
+
+.card {
+  -webkit-clip-path: inset(0 0 70% 0);
+  clip-path: inset(0 0 70% 0);
+  -webkit-transform: translateY(30%);
+  transform: translateY(30%);
+  transition: 0.5s ease;
+}
+.card .card-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 500px;
+  height: 112px;
+  font-size: 2em;
+  color: white;
+  background-color: #2979ff;
+  -webkit-clip-path: inset(0 19% 0 19%);
+  clip-path: inset(0 19% 0 19%);
+  transition: 0.5s ease;
+}
+.card .card-body {
+  box-sizing: border-box;
+  padding: 0.3em;
+  width: 500px;
+  height: 260px;
+  font-size: 1.5em;
+  background: white;
+  -webkit-clip-path: inset(0 19% 0 19%);
+  clip-path: inset(0 19% 0 19%);
+  transition: 0.5s ease;
+}
+.card .card-body dl {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+.card .card-body span {
+  opacity: 0;
+  -webkit-transform: translateY(100%);
+  transform: translateY(100%);
+  transition: 0.5s ease-in;
+}
+.card .card-body span:nth-child(1) {
+  transition-delay: 0.1s;
+}
+.card .card-body span:nth-child(2) {
+  transition-delay: 0.2s;
+}
+.card .card-body span:nth-child(3) {
+  transition-delay: 0.3s;
+}
+.card .card-body span dt,
+.card .card-body span dd {
+  display: inline;
+  margin: 0;
+}
+.card .card-body span dt i,
+.card .card-body span dd i {
+  margin-right: 0.3em;
+  color: #4289ff;
+}
+.card:hover {
+  -webkit-transform: translateY(0);
+  transform: translateY(0);
+  -webkit-clip-path: inset(0 0 0 0);
+  clip-path: inset(0 0 0 0);
+}
+.card:hover .card-header,
+.card:hover .card-body {
+  -webkit-clip-path: inset(0 0 0 0);
+  clip-path: inset(0 0 0 0);
+}
+.card:hover span {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+  transform: translateY(0);
+}
+
+.nopadding {
+  padding: 0;
+}
+
+.custompadding {
+  padding-left: 35px;
+  padding-right: 35px;
+}
+
+.custom-padding {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.list__item__text {
+  padding-right: 10%;
+  flex: 1;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-content: flex-start;
+  width: 100%;
+  flex: 0 0 100%;
+  padding: 8px 0;
+}
+.list__item {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  align-content: flex-start;
+  align-items: center;
+  padding: 12px 16px;
+}
+
+.product-title b {
+  font-weight: 900;
+  letter-spacing: 0px;
+  font-size: 20px;
+}
+
+.badge {
+  position: relative;
+  font-size: 15px;
+  font-weight: 300;
+  color: #fff;
+  background: #00000055;
+  padding: 4px 5px;
+  border-radius: 4px;
+  top: -2px;
+  margin-left: 5px;
+}
+
+#loading {
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  position: fixed;
+  opacity: 1;
+  background-color: #f9f9f9;
+  z-index: 999;
+  text-align: center;
+}
+
+.spacer {
+  width: 100%;
+  height: 50px;
+}
+
+.spacer-big {
+  width: 100%;
+  height: 100px;
+}
+
+/* -----Body Border -----*/
+
+#top,
+#bottom,
+#left,
+#right {
+  background: #ffffff;
+  position: fixed;
+  z-index: 111;
+}
+#left,
+#right {
+  top: 0;
+  bottom: 0;
+  width: 10px;
+}
+#left {
+  left: 0;
+}
+#right {
+  right: 0;
+}
+
+#top {
+  left: 0;
+  right: 0;
+  height: 10px;
+}
+#bottom {
+  left: 0;
+  right: 0;
+  height: 10px;
+}
+
+#top {
+  top: 0;
+}
+#bottom {
+  bottom: 0;
+}
+
+/* ------ Body Border End ------*/
+
+.logo {
+  position: absolute;
+  top: 25px;
+  left: 15px;
+  font-family: "Poppins";
+  font-size: 16px;
+  line-height: 1;
+  z-index: 11;
+  white-space: nowrap;
+  color: #222222;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.back-btn {
+  top: 10px;
+  font-size: 21px !important;
+}
+
+.text {
+  top: 13px;
+  font-size: 21px;
+}
+
+.logo:hover,
+.logo:focus {
+  text-decoration: none;
+  color: #333333;
+}
+
+/* -----------------------------------------------------
+------------- 3. Home Page CSS Starts Here -------------
+-------------------------------------------------------*/
+
+.main {
+  width: 100%;
+  height: 100%;
+}
+
+.intro {
+  padding: 200px 0 50px 0;
+  position: relative;
+  background: url(../images/tenor.gif);
+  position: relative;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+
+.intro .intro-title {
+  padding: 0 0 30px 0;
+}
+
+.intro .intro-title h1 {
+  font-family: Montserrat;
+  font-size: 28px;
+  font-weight: 400 !important;
+  line-height: 1.3;
+  color: #ffffff;
+  padding: 5px 10px;
+  background: #0000ff;
+  display: inline-block;
+}
+
+.intro-desc h1 {
+  font-family: Montserrat;
+  font-size: 28px;
+  font-weight: 400 !important;
+  line-height: 1.3;
+  color: #ffffff;
+  padding: 5px 10px;
+
+  display: inline-block;
+}
+
+.deschead {
+  padding: 5px 10px;
+  background: #00000088;
+}
+
+.intro h1 {
+  font-family: Roboto;
+  font-size: 24px;
+  font-weight: 300;
+  line-height: 1.3;
+  color: #ffffff;
+}
+
+.intro .sub-content {
+  padding: 20px 0 20px 0;
+}
+
+.intro .sub-content p span {
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: 300;
+  letter-spacing: 0;
+  margin-right: 10px;
+  color: #ffffff;
+}
+
+.intro .sub-content p {
+  font-family: Roboto;
+  font-size: 14px;
+  letter-spacing: 1px;
+  line-height: 1.5;
+  color: #cccccc;
+}
+
+/* -------- Intro Var 1 ---------- */
+
+.intro-1 {
+  padding: 200px 0 50px 0;
+  background: #f9f9f9;
+}
+
+.intro-1 .inner {
+  padding: 0 0 30px 0;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.intro-1 img {
+  margin-bottom: 20px;
+}
+
+.intro-1 h1 {
+  font-size: 42px;
+  color: #0000ff;
+  line-height: 1.3;
+  font-family: "Playfair Display";
+  font-weight: 900;
+  letter-spacing: 0;
+  margin: 0 0 5px 0;
+}
+
+.intro-1 h4 {
+  font-family: "Poppins";
+  font-size: 16px;
+  color: #333333;
+  font-weight: 400;
+  letter-spacing: 1px;
+  line-height: 1.4;
+  margin: 0 0 20px 0;
+}
+
+.intro-1 p {
+  font-size: 14px;
+  color: #a1a1a1;
+  line-height: 1.4;
+  font-family: "Poppins";
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+
+.intro-1 a {
+  color: #3333ff;
+  text-decoration: none;
+}
+
+.intro-1 i {
+  display: inline-block;
+  font-size: 42px;
+  color: #3333ff;
+  margin-top: 30px;
+  text-decoration: none;
+}
+
+/*-----------------------------------------------------
+------------- About Page Styling Starts ---------------
+-----------------------------------------------------*/
+
+.profile {
+  padding: 100px 0 0 0;
+  background: #ffffff;
+  position: relative;
+}
+
+.profile .container::before {
+  content: "My Profile";
+  position: absolute;
+  left: 20px;
+  top: 50px;
+  font-family: Roboto;
+  font-weight: 500;
+  color: #a1a1a1;
+  z-index: 11;
+}
+
+.profile-content .bold {
+  font-size: 16px;
+  font-weight: 400 !important;
+  color: #000000;
+  line-height: 1.2;
+  letter-spacing: 0;
+  margin: 20px 0 0 0;
+}
+
+.profile-content p {
+  font-size: 15px;
+  color: #606060;
+  font-weight: 300;
+  line-height: 1.6;
+  letter-spacing: 0.5px;
+  margin: 20px 0 0 0;
+}
+
+.profile-highlights {
+  background: #efefef;
+  padding: 30px;
+  position: relative;
+  margin-top: 100px;
+}
+
+.profile-highlights .experience h4,
+.profile-highlights .awards h4 {
+  font-family: Roboto;
+  font-size: 16px;
+  color: #000000;
+  font-weight: 600;
+  margin: 0 0 50px 0;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.profile-highlights .experience ul {
+  margin-bottom: 40px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid #dddddd;
+  -webkit-columns: 2;
+  columns: 2;
+}
+
+.profile-highlights .experience ul li {
+  list-style-type: none;
+  margin: 0 0 10px 0;
+  font-family: Roboto;
+  font-size: 16px;
+  line-height: 1.4;
+  color: #606060;
+}
+
+.profile-highlights .awards ul li {
+  list-style-type: none;
+  margin: 0 0 10px 0;
+  font-family: Roboto;
+  font-size: 16px;
+  line-height: 1.2;
+  color: #606060;
+}
+
+.profile-highlights .awards ul {
+  columns: 2;
+  -webkit-columns: 2;
+}
+
+/*--------------------------------------------------------
+----------- Portfolio Section Styling Ends ---------------
+--------------------------------------------------------*/
+
+.work {
+  width: 100%;
+  height: 100%;
+  padding: 100px 0 0 0;
+  background: #ffffff;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.work .container::before {
+  position: absolute;
+  left: 50px;
+  top: 50px;
+  font-family: Roboto;
+  font-weight: 500;
+  color: #a1a1a1;
+  z-index: 11;
+}
+
+.work-single .work-description h1 {
+  font-family: Roboto;
+  font-size: 28px;
+  font-weight: 300;
+  line-height: 1.3;
+  color: #111;
+}
+
+.singular-portfolio-item {
+  text-decoration: none;
+}
+
+.singular-portfolio-item img {
+  opacity: 0.6;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  transition: opacity 0.5s;
+}
+
+.singular-portfolio-item:hover img {
+  opacity: 1;
+}
+
+.singular-portfolio-item:hover,
+.singular-portfolio-item:focus {
+  text-decoration: none;
+}
+
+.singular-project-content {
+  padding: 30px 0 50px 0;
+}
+
+.singular-project-content h1 {
+  font-family: Roboto;
+  font-size: 18px;
+  font-weight: 400;
+  color: #404040;
+}
+
+.singular-project-content p {
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: 300;
+  color: #666666;
+  line-height: 1.4;
+  margin: 15px 0 0 0;
+}
+
+/*--------------------------------------------------------
+--------------- Services Styling Starts ------------------
+--------------------------------------------------------*/
+
+.services {
+  padding: 100px 0 100px 0;
+  background: #ffffff;
+  position: relative;
+}
+
+.services .container::before {
+  content: "What I Do";
+  position: absolute;
+  left: 50px;
+  top: 50px;
+  font-family: Roboto;
+  font-weight: 500;
+  color: #a1a1a1;
+  z-index: 11;
+}
+
+.services .service-block {
+  padding: 50px 50px 60px 50px;
+}
+
+.services .service-block .icon {
+  padding: 0 0 40px 0;
+}
+
+.services .service-block .icon i {
+  display: inline-block;
+  position: relative;
+  width: 120px;
+  height: 120px;
+  padding-left: 0;
+  text-decoration: none;
+  text-align: center;
+  color: #8080ff;
+  background: #f9f9f9;
+  font-size: 62px;
+  font-weight: normal;
+  line-height: 2em;
+  box-shadow: 0 5px 15px #ccccff;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+}
+
+.services .service-block .icon i:hover {
+  background: #f3f3f3;
+  box-shadow: 0 5px 15px #ccccff;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.services .service-block .service-text p {
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+/*-----------------------------------------------------
+--------------- Services Styling Ends -----------------
+-----------------------------------------------------*/
+
+/*-------------------------------------------------------------
+--------------- Single Project Styling Starts -----------------
+--------------------------------------------------------------*/
+
+.project-page {
+  padding: 150px 0 100px 0;
+  background: #f4f4f4;
+}
+
+.project-page .project-intro h1 {
+  font-size: 34px;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -1px;
+  color: #111111;
+}
+
+.project-page .project-intro p {
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.4;
+  margin: 20px 0 0 0;
+}
+
+.project-page .project-intro img {
+  margin: 30px 0 30px 0;
+}
+
+.project-nav {
+  padding: 100px 0 0 0;
+  overflow: hidden;
+}
+
+.project-main i {
+  font-size: 34px;
+  font-weight: 700;
+  color: #444444;
+}
+
+.project-nav .nav-icon {
+  display: inline;
+  font-size: 32px;
+  color: #666666;
+  float: left;
+}
+
+.project-nav .nav-icon.right {
+  display: inline;
+  float: right;
+}
+
+.project-nav .inner-nav {
+  display: inline;
+}
+
+.project-nav .inner-nav a {
+  display: block;
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: 400;
+  color: #666666;
+  margin: 8px 0 0 30px;
+  text-decoration: none;
+  -webkit-transition: 0.4s;
+  -moz-transition: 0.4s;
+  -o-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.project-nav .right {
+  text-align: right;
+}
+
+.project-nav .right a {
+  display: block;
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: 400;
+  color: #666666;
+  text-decoration: none;
+  margin: 8px 30px 0 0;
+}
+
+.project-nav .inner-nav:hover a {
+  margin-left: 20px;
+}
+
+.project-nav .right:hover a {
+  margin-right: 20px;
+}
+
+.project-nav .project-main i {
+  font-size: 32px;
+  margin-top: 3px;
+}
+
+/*-------------------------------------------------------------
+--------------- Single Project Styling Starts -----------------
+--------------------------------------------------------------*/
+
+/*-----------------------------------------------------------
+--------------- Contact Page Styling Starts -----------------
+-------------------------------------------------------------*/
+
+.contact {
+  padding: 150px 50px 100px 50px;
+}
+
+.contact h1 {
+  font-family: "Playfair Display";
+  font-size: 42px;
+  font-weight: 700;
+  color: #c5283d;
+  letter-spacing: -1px;
+}
+
+.contact p {
+  font-family: Poppins;
+  font-size: 18px;
+  line-height: 1.4;
+  margin: 40px 0 0 0;
+  color: #666666;
+}
+
+.contact-form {
+  padding-top: 75px;
+}
+
+label {
+  display: block;
+  font-family: Poppins;
+  font-size: 14px;
+  font-weight: 500;
+  color: #333333;
+  text-align: left;
+}
+
+.form-control {
+  border: 0px;
+  border-radius: 0px;
+  margin-top: 10px;
+  background: transparent;
+  margin-bottom: 40px;
+  border-bottom: 1px solid #999999;
+  -webkit-box-shadow: inset 0 0px 0px rgba(0, 0, 0, 0);
+  box-shadow: inset 0 0px 0px rgba(0, 0, 0, 0);
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.form-control:focus {
+  border-color: #ff0000;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+
+.form-control::-webkit-input-placeholder {
+  font-family: Poppins;
+  font-size: 12px;
+  color: #999999;
+}
+.form-control:-moz-placeholder {
+  font-family: Poppins;
+  font-size: 12px;
+  color: #999999;
+}
+.form-control::-moz-placeholder {
+  font-family: Poppins;
+  font-size: 12px;
+  color: #999999;
+}
+.form-control:-ms-input-placeholder {
+  font-family: Poppins;
+  font-size: 12px;
+  color: #999999;
+}
+
+.text-muted {
+  font-family: Poppins;
+  font-size: 12px;
+  color: #222;
+}
+
+.text-muted strong {
+  color: #ff3333;
+}
+
+.btn-send {
+  font-family: Poppins;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 20px;
+  border-radius: 0px;
+  color: #ffffff;
+  background: #ff0000;
+  border-color: #ff0000;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.btn-send:hover {
+  color: #ff0000;
+  background: transparent;
+  border-color: #ff0000;
+  outline: none !important;
+}
+
+.btn-send:focus {
+  color: #ffffff;
+  background: #ff0000;
+  border-color: #ff0000;
+  outline: none !important;
+}
+
+/* -------- Contact Section Styling Ends ---- */
+
+/* ----------------------------------------------------
+----------- Footer Styling Starts Here ----------------
+-----------------------------------------------------*/
+
+.footer {
+  padding: 100px 0 50px 0;
+  background: #3333ff;
+  /*position: fixed;
+	left: 0px;
+  bottom: 0px;
+  right: 0;
+	z-index: 0;*/
+}
+
+.footer .contact-link {
+  padding: 0 0 100px 0;
+}
+
+.footer .contact-link img {
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+
+/* .footer .contact-link a::before {
+  content: "";
+  display: block;
+  height: 50px;
+  width: 1px;
+  background: #ffffff00;
+  margin: 0 auto;
+  margin-bottom: 20px;
+} */
+
+.footer .contact-link a {
+  font-family: Roboto;
+  font-size: 24px;
+  letter-spacing: 0;
+  color: #ffffff;
+  display: inline-block;
+  transition: all 0.2s ease-in-out;
+}
+
+.footer .contact-link a:hover {
+  text-decoration: none;
+  -webkit-transform: scale(1.05);
+}
+
+.footer .contact-link a:focus {
+  text-decoration: none;
+}
+
+.footer .social ul {
+  list-style-type: none;
+  margin-top: 0;
+}
+
+.footer .social ul li {
+  display: inline;
+  margin-right: 15px;
+}
+
+.footer .social ul li a {
+  font-family: Roboto;
+  font-size: 13px;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.footer .social ul li a:hover {
+  color: #ffffff;
+}
+
+.footer .address {
+  text-align: right;
+}
+
+.footer .address h2 {
+  font-family: Roboto;
+  font-size: 13px;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.4;
+}
+
+/* -------------------------------------------------------
+----------- Bact-to-Top Styling Starts Here --------------
+---------------------------------------------------------*/
+
+.back-to-top {
+  background: #3333ff;
+  margin: 0;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  z-index: 90;
+  display: none;
+  box-shadow: 0 2px 10px #ccccff;
+  text-decoration: none;
+  color: #0e1729;
+}
+
+.back-to-top i {
+  position: relative;
+  left: 15px;
+  top: 10px;
+  font-size: 24px;
+  color: #ffffff;
+  -webkit-transition: 200ms;
+  -moz-transition: 200ms;
+  -o-transition: 200ms;
+  transition: 200ms;
+}
+
+.back-to-top:hover {
+  background: #3333ff;
+  color: #ffffff;
+}
+
+.back-to-top:hover i {
+  top: 8px;
+}
+
+.back-to-top:focus {
+  color: #ffffff;
+}
+
+/*----------------------------------------------------
+------------- All ------------------------------------
+--------------------- Media --------------------------
+------------------------------- Queries --------------
+-----------------------------------------------------*/
+
+@media only screen and (min-width: 768px) {
+  .logo {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+  }
+
+  .intro {
+    padding: 250px 0 100px 0;
+  }
+
+  .intro .intro-title h1 {
+    font-size: 34px;
+  }
+
+  .intro h1 {
+    font-size: 30px;
+  }
+
+  .intro-1 {
+    padding: 150px 0 100px 0;
+  }
+
+  .intro-1 h1 {
+    font-size: 42px;
+  }
+
+  .profile {
+    padding: 200px 0 0 0;
+  }
+
+  .profile .container::before {
+    left: 100px;
+    top: 100px;
+  }
+
+  .profile-highlights {
+    padding: 75px;
+    margin-top: 0;
+  }
+
+  .work {
+    padding: 100px 0 0 0;
+  }
+
+  .work .container::before {
+    left: 100px;
+    top: 100px;
+  }
+
+  .services {
+    padding: 200px 0 100px 0;
+  }
+
+  .services .container::before {
+    left: 100px;
+    top: 100px;
+  }
+
+  .footer .contact-link a {
+    font-size: 42px;
+  }
+}
+
+@media only screen and (max-width: 801px) {
+  .profile-highlights {
+    margin-top: 75px;
+  }
+}

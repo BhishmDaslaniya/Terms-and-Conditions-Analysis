@@ -1,0 +1,24 @@
+{
+    "name": "Terms and Conditions checks",
+    "version": "1.0",
+    "description": "Get summary of terms and conditions, privacy policy of the websites.",
+    "manifest_version": 2,
+    "browser_action": {
+        "default_popup": "popup.html"
+
+    },
+    "content_scripts": [
+        {
+          "matches": [
+            "<all_urls>"
+          ],
+          "js": ["content.js"]
+        }
+    ],
+    "permissions":["tabs"],
+    "background": {
+        "scripts": ["background.js"],
+        "persistent": false
+    }
+  
+}
