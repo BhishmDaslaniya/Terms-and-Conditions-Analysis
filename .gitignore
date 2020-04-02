@@ -3,3 +3,4 @@
 *.pyc
 hex
 *.sav
+*.ipynb_checkpoints
