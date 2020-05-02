@@ -42,7 +42,7 @@ jQuery(function($) {
 
     $.ajax({
       type: "GET",
-      url: "http://192.168.137.251:3000/search",
+      url: "http://127.0.0.1:5500/data.json",
       async: false,
       beforeSend: function(xhr) {
         if (xhr && xhr.overrideMimeType) {

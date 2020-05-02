@@ -4,3 +4,4 @@
 hex
 *.sav
 *.ipynb_checkpoints
+frontend/data_source/*.json
